@@ -1,0 +1,89 @@
+{
+    "parameterSets": {
+        "d20": {
+            "bearing_diameter": "10",
+            "debug_cross_section": "false",
+            "debug_highlight_labels": "false",
+            "dice_diameter": "40",
+            "dice_outer_resolution": "100",
+            "font": "Jacquard 24 Custom",
+            "label_deboss": "1",
+            "label_size": "10",
+            "pocket_padding": "2",
+            "sides": "20"
+        },
+        "d4": {
+            "bearing_diameter": "10",
+            "debug_cross_section": "false",
+            "debug_highlight_labels": "false",
+            "dice_diameter": "40",
+            "dice_outer_resolution": "100",
+            "font": "Jacquard 24 Custom",
+            "label_deboss": "2",
+            "label_size": "24",
+            "pocket_padding": "2",
+            "sides": "4"
+        },
+        "d6": {
+            "bearing_diameter": "10",
+            "debug_cross_section": "false",
+            "debug_highlight_labels": "false",
+            "dice_diameter": "40",
+            "dice_outer_resolution": "100",
+            "font": "Jacquard 24 Custom",
+            "label_deboss": "3",
+            "label_size": "20",
+            "pocket_padding": "2",
+            "sides": "6"
+        },
+        "d8": {
+            "bearing_diameter": "10",
+            "debug_cross_section": "false",
+            "debug_highlight_labels": "false",
+            "dice_diameter": "40",
+            "dice_outer_resolution": "100",
+            "font": "Jacquard 24 Custom",
+            "label_deboss": "3",
+            "label_size": "20",
+            "pocket_padding": "2",
+            "sides": "8"
+        },
+        "d10": {
+            "bearing_diameter": "10",
+            "debug_cross_section": "false",
+            "debug_highlight_labels": "false",
+            "dice_diameter": "40",
+            "dice_outer_resolution": "100",
+            "font": "Jacquard 24 Custom",
+            "label_deboss": "3",
+            "label_size": "20",
+            "pocket_padding": "2",
+            "sides": "10"
+        },
+        "d12": {
+            "bearing_diameter": "10",
+            "debug_cross_section": "false",
+            "debug_highlight_labels": "false",
+            "dice_diameter": "40",
+            "dice_outer_resolution": "100",
+            "font": "Jacquard 24 Custom",
+            "label_deboss": "2",
+            "label_size": "16",
+            "pocket_padding": "2",
+            "sides": "12"
+        },
+        "d10s": {
+            "bearing_diameter": "10",
+            "debug_cross_section": "false",
+            "debug_highlight_labels": "false",
+            "dice_diameter": "40",
+            "dice_outer_resolution": "100",
+            "font": "Jacquard 24 Custom",
+            "label_deboss": "3",
+            "label_size": "16",
+            "pocket_padding": "2",
+            "sides": "100"
+        }
+    },
+    "fileFormatVersion": "1"
+}
