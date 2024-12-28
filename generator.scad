@@ -87,8 +87,8 @@ module dice() {
   }
 }
 
-module pin_holes() {
-  for (i = [0:pin_holes]) {
+module pin_holes(inverse=false) {
+  rotate([(inverse?180:0),0,0])union(){for (i = [0:pin_holes]) {
     rotate([ 0, 0, (360 / pin_holes * i) + pin_hole_rotation ])
         translate(v = [ dice_diameter / 2 - pin_hole_inset, 0, 0 ])
             cube([ pin_hole_diameter, pin_hole_diameter, pin_hole_depth * 2 ],
@@ -99,7 +99,7 @@ module pin_holes() {
         translate(v = [ dice_diameter / 2 - pin_hole_inset, 0, 0 ])
             cube([ pin_hole_diameter, pin_hole_diameter, pin_hole_depth * 2 ],
                  center = true);
-  }
+  }}
 }
 
 module slicing_plane(angleX = 0, angleY = 0, angleZ = 0, size = 200) {
@@ -113,35 +113,29 @@ if (debug_cross_section) {
     cube(dice_diameter);
   }
 } else if (split) {
-  translate([ dice_diameter + 5, 0, 0 ]) difference() {
+  translate([ dice_diameter + 5, 0, 0 ]) // If you want side by side
+  //translate([0, 0, 5]) // just a little vert seperation to check pins
+   difference() {
     rotate([ -split_rot_x, 0, 0 ]) rotate([ 0, -split_rot_y, 0 ])
         rotate([ 0, 0, -split_rot_z ]) difference() {
 
-      if (pins) {
-        difference() {
-          dice();
-          pin_holes();
-        }
-      } else {
-        dice();
-      }
+      dice();
       slicing_plane(split_rot_x, split_rot_y, split_rot_z, 200);
+    }
+    if(pins){
+      #pin_holes();
     }
   }
   difference() {
 
-    rotate([ 180 - split_rot_x, 0, 0 ]) rotate([ 0, -split_rot_y, 0 ])
+    rotate([ 180-split_rot_x, 0, 0 ]) rotate([ 0, -split_rot_y, 0 ])
         rotate([ 0, 0, -split_rot_z ]) intersection() {
 
-      if (pins) {
-        difference() {
-          dice();
-          pin_holes();
-        }
-      } else {
-        dice();
-      }
+      dice();
       slicing_plane(split_rot_x, split_rot_y, split_rot_z, 200);
+    }
+    if(pins){
+      #pin_holes(inverse=true);
     }
   }
 } else {
