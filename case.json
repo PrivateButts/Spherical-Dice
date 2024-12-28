@@ -1,0 +1,40 @@
+{
+    "parameterSets": {
+        "design default values": {
+            "dice": "[\"D12\", \"D100\", \"D10\", \"D8\", \"D6\", \"D4\"]",
+            "dice_diameter": "40",
+            "dice_padding": "2",
+            "dice_spacing": "10",
+            "font": "Jacquard 24 Custom",
+            "font_deboss": "1",
+            "font_size": "20",
+            "horizontal_thickness": "40",
+            "vertical_thickness": "4"
+        },
+        "top": {
+            "dice": "[\"D12\", \"D100\", \"D10\", \"D8\", \"D6\", \"D4\"]",
+            "dice_diameter": "40",
+            "dice_padding": "2",
+            "dice_spacing": "10",
+            "font": "Jacquard 24 Custom",
+            "font_deboss": "1",
+            "font_size": "20",
+            "generate_bottom": "false",
+            "horizontal_thickness": "40",
+            "vertical_thickness": "4"
+        },
+        "bottom": {
+            "dice": "[\"D12\", \"D100\", \"D10\", \"D8\", \"D6\", \"D4\"]",
+            "dice_diameter": "40",
+            "dice_padding": "2",
+            "dice_spacing": "10",
+            "font": "Jacquard 24 Custom",
+            "font_deboss": "1",
+            "font_size": "20",
+            "generate_bottom": "true",
+            "horizontal_thickness": "40",
+            "vertical_thickness": "4"
+        }
+    },
+    "fileFormatVersion": "1"
+}
