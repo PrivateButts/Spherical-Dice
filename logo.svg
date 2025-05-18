@@ -2,15 +2,16 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1080"
-   height="1080"
-   viewBox="0 0 1080 1080"
+   width="140.02899"
+   height="97.040939"
+   viewBox="0 0 140.02899 97.040939"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    sodipodi:docname="logo.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -23,61 +24,75 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="3.0929374"
-     inkscape:cx="418.53418"
-     inkscape:cy="311.35451"
+     inkscape:zoom="1.0935185"
+     inkscape:cx="187.92549"
+     inkscape:cy="-5.4868756"
      inkscape:window-width="1707"
      inkscape:window-height="995"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="svg1" />
   <defs
-     id="defs1" />
+     id="defs1">
+    <rect
+       x="504.79257"
+       y="143.57326"
+       width="271.60034"
+       height="239.59357"
+       id="rect4" />
+  </defs>
   <g
-     inkscape:label="Layer 1"
+     inkscape:label="Logo 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-338.82016,-240.06378)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Stanford Breath';-inkscape-font-specification:'Stanford Breath, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000"
-       x="390.79517"
-       y="231.8205"
-       id="text1"><tspan
-         id="tspan1"
-         x="390.79517"
-         y="231.8205"
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Stanford Breath';-inkscape-font-specification:'Stanford Breath, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">BUTTS' BEST</tspan></text>
+       id="text1"
+       transform="translate(-0.26754629)"><textPath
+         xlink:href="#path1"
+         id="textPath1"><tspan
+           id="tspan1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:'Stanford Breath';-inkscape-font-specification:'Stanford Breath, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">BUTTS' BEST</tspan></textPath></text>
     <text
        xml:space="preserve"
-       style="fill:#000000;-inkscape-font-specification:'Firlest, Normal';font-family:Firlest;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       x="378.57318"
-       y="284.392"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.9118px;font-family:Firlest;-inkscape-font-specification:'Firlest, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:2.40931"
+       x="340.81961"
+       y="283.82181"
        id="text2"><tspan
          sodipodi:role="line"
          id="tspan2"
-         x="378.57318"
-         y="284.392">Serendipity</tspan></text>
+         x="340.81961"
+         y="283.82181"
+         style="stroke-width:2.40931">Serendipity</tspan></text>
     <text
        xml:space="preserve"
-       style="fill:#000000;-inkscape-font-specification:'Jamesoon, Normal';font-family:Jamesoon;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       x="368.53516"
-       y="395.05502"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.7188px;font-family:Jamesoon;-inkscape-font-specification:'Jamesoon, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:1.14323"
+       x="372.42496"
+       y="335.87003"
        id="text3"><tspan
          sodipodi:role="line"
          id="tspan3"
-         x="368.53516"
-         y="395.05502">&quot;Probably Fair&quot;</tspan></text>
+         x="372.42496"
+         y="335.87003"
+         style="stroke-width:1.14323">&quot;Probably Fair&quot;</tspan></text>
     <text
        xml:space="preserve"
-       style="fill:#000000;-inkscape-font-specification:'Firlest, Normal';font-family:Firlest;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       x="387.98117"
-       y="339.72351"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.0066px;font-family:Firlest;-inkscape-font-specification:'Firlest, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:3.66722"
+       x="338.77615"
+       y="319.1492"
        id="text6"><tspan
          sodipodi:role="line"
          id="tspan6"
-         x="387.98117"
-         y="339.72351">Spheres</tspan></text>
+         x="338.77615"
+         y="319.1492"
+         style="stroke-width:3.66722">Spheres</tspan></text>
+    <path
+       style="fill:none;stroke:none"
+       d="m 374.40137,257.36053 c 24.96337,-12.00931 49.03544,-9.65049 68.86658,0"
+       id="path1"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>

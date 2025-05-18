@@ -11,18 +11,6 @@
             "horizontal_thickness": "40",
             "vertical_thickness": "4"
         },
-        "top": {
-            "dice": "[\"D12\", \"D100\", \"D10\", \"D8\", \"D6\", \"D4\"]",
-            "dice_diameter": "40",
-            "dice_padding": "2",
-            "dice_spacing": "10",
-            "font": "Jacquard 24 Custom",
-            "font_deboss": "1",
-            "font_size": "20",
-            "generate_bottom": "false",
-            "horizontal_thickness": "40",
-            "vertical_thickness": "4"
-        },
         "bottom": {
             "dice": "[\"D12\", \"D100\", \"D10\", \"D8\", \"D6\", \"D4\"]",
             "dice_diameter": "40",
@@ -33,6 +21,23 @@
             "font_size": "20",
             "generate_bottom": "true",
             "horizontal_thickness": "40",
+            "vertical_thickness": "4"
+        },
+        "top": {
+            "dice": "[\"D12\", \"D100\", \"D10\", \"D8\", \"D6\", \"D4\"]",
+            "dice_diameter": "40",
+            "dice_padding": "2",
+            "dice_spacing": "10",
+            "font": "Jacquard 24 Custom",
+            "font_deboss": "1",
+            "font_size": "20",
+            "generate_bottom": "false",
+            "horizontal_thickness": "40",
+            "logo": "true",
+            "logo_extrude": "2",
+            "logo_rotate": "180",
+            "logo_scale": "1.5",
+            "logo_svg": "logo_importable.svg",
             "vertical_thickness": "4"
         }
     },

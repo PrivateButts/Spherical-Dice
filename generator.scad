@@ -4,11 +4,12 @@ use <dice.scad>
 dice_diameter = 40;
 bearing_diameter = 10;
 pocket_padding = 2;
-sides = 4; // [4, 6, 8, 10, 100, 12, 20]
+sides = 4; // [4, 6, 8, 10, 100, 12, 20, 21]
 label_size = 10;
 label_deboss = 1;
 font = "Jacquard 24 Custom";
 dice_outer_resolution = 100;
+connecting_pocket_divisor = 2; // [1:1:10]
 
 split = true;
 split_rot_x = 0; // [-180:1:180]
@@ -21,6 +22,10 @@ pin_holes = 4;
 pin_hole_inset = 4;
 pin_hole_rotation = 45; // [-180:1:180]
 pin_hole_depth = 4;
+
+glue_channel = true;
+glue_channel_width = .8;
+glue_channel_depth = .8;
 
 orientation_pin = true;
 orientation_pin_location = 15; // [-180:1:180]
@@ -75,7 +80,7 @@ module dice() {
       // Connecting pocket
       hull() {
         for (pnt = points) {
-          translate(pnt * bearing_diameter) sphere(r = bearing_diameter / 2);
+          translate(pnt * bearing_diameter) sphere(r = bearing_diameter / connecting_pocket_divisor);
         }
       }
       // Pocket for the bearing to settle in
@@ -87,19 +92,33 @@ module dice() {
   }
 }
 
-module pin_holes(inverse=false) {
-  rotate([(inverse?180:0),0,0])union(){for (i = [0:pin_holes]) {
-    rotate([ 0, 0, (360 / pin_holes * i) + pin_hole_rotation ])
-        translate(v = [ dice_diameter / 2 - pin_hole_inset, 0, 0 ])
-            cube([ pin_hole_diameter, pin_hole_diameter, pin_hole_depth * 2 ],
-                 center = true);
+module pin_holes(inverse = false) {
+  rotate([ (inverse ? 180 : 0), 0, 0 ]) union() {
+    for (i = [0:pin_holes]) {
+      rotate([ 0, 0, (360 / pin_holes * i) + pin_hole_rotation ])
+          translate(v = [ dice_diameter / 2 - pin_hole_inset, 0, 0 ])
+              cube([ pin_hole_diameter, pin_hole_diameter, pin_hole_depth * 2 ],
+                   center = true);
+    }
+    if (orientation_pin) {
+      rotate([ 0, 0, orientation_pin_location ])
+          translate(v = [ dice_diameter / 2 - pin_hole_inset, 0, 0 ])
+              cube([ pin_hole_diameter, pin_hole_diameter, pin_hole_depth * 2 ],
+                   center = true);
+    }
   }
-  if (orientation_pin) {
-    rotate([ 0, 0, orientation_pin_location ])
-        translate(v = [ dice_diameter / 2 - pin_hole_inset, 0, 0 ])
-            cube([ pin_hole_diameter, pin_hole_diameter, pin_hole_depth * 2 ],
-                 center = true);
-  }}
+}
+
+module glue_channel() {
+  difference() {
+    cylinder(h = glue_channel_depth,
+             r = (dice_diameter / 2 - pin_hole_inset) + glue_channel_width / 2);
+    translate([ 0, 0, -.1 ]) {
+      cylinder(h = glue_channel_depth + 1,
+               r = (dice_diameter / 2 - pin_hole_inset) -
+                   glue_channel_width / 2);
+    }
+  }
 }
 
 module slicing_plane(angleX = 0, angleY = 0, angleZ = 0, size = 200) {
@@ -113,29 +132,37 @@ if (debug_cross_section) {
     cube(dice_diameter);
   }
 } else if (split) {
-  translate([ dice_diameter + 5, 0, 0 ]) // If you want side by side
-  //translate([0, 0, 5]) // just a little vert seperation to check pins
-   difference() {
+  translate([
+    dice_diameter + 5, 0, 0
+  ]) // If you want side by side
+     // translate([0, 0, 5]) // just a little vert seperation to check pins
+      difference() {
     rotate([ -split_rot_x, 0, 0 ]) rotate([ 0, -split_rot_y, 0 ])
         rotate([ 0, 0, -split_rot_z ]) difference() {
 
       dice();
       slicing_plane(split_rot_x, split_rot_y, split_rot_z, 200);
     }
-    if(pins){
-      #pin_holes();
+    if (pins) {
+#pin_holes();
+    }
+    if (glue_channel) {
+      translate(v = [ 0, 0, -.01 ]) { glue_channel(); }
     }
   }
   difference() {
 
-    rotate([ 180-split_rot_x, 0, 0 ]) rotate([ 0, -split_rot_y, 0 ])
+    rotate([ 180 - split_rot_x, 0, 0 ]) rotate([ 0, -split_rot_y, 0 ])
         rotate([ 0, 0, -split_rot_z ]) intersection() {
 
       dice();
       slicing_plane(split_rot_x, split_rot_y, split_rot_z, 200);
     }
-    if(pins){
-      #pin_holes(inverse=true);
+    if (pins) {
+#pin_holes(inverse = true);
+    }
+    if (glue_channel) {
+      translate(v = [ 0, 0, -.01 ]) { glue_channel(); }
     }
   }
 } else {

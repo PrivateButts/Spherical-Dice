@@ -22,6 +22,13 @@ case_y = dice_slot_x_total * 3;
 case_z = dice_slot_diameter / 2 + vertical_thickness;
 generate_bottom = true; // [top:false,bottom:true]
 
+logo_cutout = false;
+logo_render = false;
+logo_svg = "logo_importable.svg";
+logo_extrude = 1;
+logo_scale = 1.5;
+logo_rotate = 180;
+
 // difference() {
 //     cube([ case_x, case_y, case_z ]);
 //     translate(
@@ -31,8 +38,8 @@ generate_bottom = true; // [top:false,bottom:true]
 //         translate([ dice_slot_x_total * i, 0, 0 ]) sphere(d =
 //         dice_slot_diameter); translate([ dice_slot_x_total * i,
 //         -dice_slot_diameter / 1.25, 0 ])
-//             text(text = dice[i], halign = "center", valign = "center", font =
-//             font, size = font_size);
+//             text(text = dice[i], halign = "center", valign = "center",
+//             font = font, size = font_size);
 //     }
 // }
 
@@ -67,10 +74,35 @@ module case_base(bottom = true) {
   }
 }
 
-module case (bottom = true){union(){
-    case_base(bottom); translate([ 0, dice_slot_x_total + 18, case_z + 5 ])
-        rotate([ 90, 0, 180 ]) ydistribute(spacing = 10){
-            knuckle_hinge(length = 35, segs = 9, offset = 4, arm_height = 1,
-                          teardrop = true, inner = !bottom);}}}
+module logo(additional_extrude = 0) {
+  linear_extrude(height = logo_extrude + additional_extrude)
+      rotate([ 180, 0, logo_rotate ]) scale(logo_scale)
+          import(logo_svg, center = true);
+}
 
+// clang-format off
+module case (bottom = true){
+  union(){
+    difference() {
+      case_base(bottom);
+      if(logo_cutout){
+        translate([0,0,-.1]) logo(additional_extrude=.1);
+      }
+    }
+    translate([ 0, dice_slot_x_total + 18, case_z + 5 ])
+      rotate([ 90, 0, 180 ])
+      ydistribute(spacing = 10){
+      knuckle_hinge(
+        length = 35,
+        segs = 9,
+        offset = 4,
+        arm_height = 1,
+        teardrop = true,
+        inner = !bottom
+      );
+    }
+  }
+}
+// clang-format on
 case (bottom = generate_bottom);
+    if (logo_render){logo();}
